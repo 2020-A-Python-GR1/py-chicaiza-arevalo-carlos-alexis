@@ -1,6 +1,7 @@
+from director import Director
+from pelicula import Pelicula
 
 def main():
-
     
     opcion_archivo = input("""En que directorio desea trabajar:
     directores (D)
