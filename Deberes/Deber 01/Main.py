@@ -3,6 +3,8 @@ from pelicula import Pelicula
 
 def main():
     
+    id_director_max = 0
+    id_pelicula_max = 0
     opcion_archivo = input("""En que directorio desea trabajar:
     directores (D)
     peliculas (P)\n""")
