@@ -31,6 +31,17 @@ class Director:
     def get_nombre_apellido(self):
         return self.__nombre_apellido
 
+    def get_nombre_apellido(self):
+        return self.__nombre_apellido
+    
+    def get_nombre_apellido(self):
+        return self.__nombre_apellido
+
+    def get_nombre_apellido(self):
+        return self.__nombre_apellido
+
+    def get_nombre_apellido(self):
+        return self.__nombre_apellido
 
     #def set_pelicula(self, id_pelicula, id_director, nombre_pelicula,
      #                fecha_estreno, genero, secuela, calificacion_IMDB):
