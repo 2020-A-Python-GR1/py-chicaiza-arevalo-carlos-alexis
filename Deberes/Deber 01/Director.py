@@ -13,6 +13,9 @@ class Director:
     def __init__(self):
         print("contructor director")
 
+    def set_id_director(self, id_director):
+        self.__id_director = id_director
+
     def set_nombre_apellido(self, nombre_apellido):
         self.__nombre_apellido = nombre_apellido
 
@@ -28,35 +31,41 @@ class Director:
     def set_calificacion_pelicula_alta_IMDB(self, calificacion_alta_IMDB):
         self.__calificacion_alta_IMDB = calificacion_alta_IMDB
 
-    def get_nombre_apellido(self):
-        return self.__nombre_apellido
-
-    def get_nombre_apellido(self):
-        return self.__nombre_apellido
     
-    def get_nombre_apellido(self):
-        return self.__nombre_apellido
+    def get_id_director(self):
+        return self.__id_director
 
     def get_nombre_apellido(self):
         return self.__nombre_apellido
 
+    def get_anio_nacimiento(self):
+        return self.__anio_nacimiento
+    
+    def get_anio_debut(self):
+        return self.__anio_debut
+
+    def get_casado(self):
+        return self.__casado
+
     def get_nombre_apellido(self):
         return self.__nombre_apellido
 
-    #def set_pelicula(self, id_pelicula, id_director, nombre_pelicula,
-     #                fecha_estreno, genero, secuela, calificacion_IMDB):
-
-
-    def set_pelicula(self,nombre_pelicula):
+    def set_pelicula(self, id_pelicula, id_director, nombre_pelicula,
+                    fecha_estreno, genero, secuela, calificacion_IMDB):
+        
         pelicula = Pelicula()
+        pelicula.set_id_pelicula(id_pelicula)
+        pelicula.set_id_director(id_director)
         pelicula.set_nombre_pelicula(nombre_pelicula)
+        pelicula.set_fecha_estreno(fecha_estreno)
+        pelicula.set_genero(genero)
+        pelicula.set_secuela(secuela)
+        pelicula.set_calificacion_IMDB(calificacion_IMDB)
+        
         self.peliculas.append(pelicula)
-    
-    
 
-def main():
-    director = Director()
-    director.set_pelicula("Mad max")
-    print(director.peliculas[0])
-if __name__ == "__main__":
-    main()
+    #def set_pelicula(self, nombre_pelicula):
+     #   pelicula = Pelicula()
+     #   pelicula.set_nombre_pelicula(nombre_pelicula)
+      #  self.peliculas.append(pelicula)
+    
