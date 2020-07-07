@@ -1,4 +1,4 @@
-from pelicula import Pelicula
+from Pelicula import Pelicula
 class Director:
     __id_director = None
 
@@ -61,11 +61,5 @@ class Director:
         pelicula.set_genero(genero)
         pelicula.set_secuela(secuela)
         pelicula.set_calificacion_IMDB(calificacion_IMDB)
-        
-        self.peliculas.append(pelicula)
 
-    #def set_pelicula(self, nombre_pelicula):
-     #   pelicula = Pelicula()
-     #   pelicula.set_nombre_pelicula(nombre_pelicula)
-      #  self.peliculas.append(pelicula)
-    
+        self.peliculas.append(pelicula)
