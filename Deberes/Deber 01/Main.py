@@ -178,11 +178,27 @@ def main():
 
         elif(operacion.lower() == 'r'):
             print("read")
-            archivo_leer_director = establecer_archivo(ruta_archivo_director,'r')
-            lineas = leer_archivo_lineas(archivo_leer_director)
-            archivo_leer_director.close()
-            for linea in lineas:
-                print(linea)
+            while(True):
+                opcion_busqueda= input("Desea buscar un director (B)o mostrar todos(T)")
+                if(opcion_busqueda.lower()=='b'):
+                    id_pelicula_buscar = input("Ingrese id del director")
+                    archivo_leer_director = establecer_archivo(ruta_archivo_director,'r')
+                    lineas = leer_archivo_lineas(archivo_leer_director)
+                    archivo_leer_director.close()
+                    datos_pelicula=obtener_datos_peli_id(lineas,id_pelicula_buscar)
+                    print("id_director	nombre_apellido	anio_nacimiento	anio_debut	casado	calificacion_pelicula_alta_IMDB peliculas_dirigidas(id)")
+                    print(datos_pelicula)
+                    break;
+                elif(opcion_busqueda.lower()=='t'):
+                    archivo_leer_director = establecer_archivo(ruta_archivo_director,'r')
+                    lineas = leer_archivo_lineas(archivo_leer_director)
+                    archivo_leer_director.close()
+                    for linea in lineas:
+                        print(linea)
+                    break;
+                else:
+                    print("Ingrese B o T")
+                
         
         elif(operacion.lower() == 'u'):
             print("update")
@@ -497,5 +513,7 @@ def obtener_indice_lista_id(lista, id):
     else:
         return -1
 
+
 if __name__ == "__main__":
-    main()
+    while(True):
+        main()
