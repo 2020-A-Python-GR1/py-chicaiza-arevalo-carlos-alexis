@@ -65,7 +65,8 @@ s5 = serie_valor_ciudad[ciudades_menor_5k]
 
 serie_valor_ciudad = serie_valor_ciudad * 1.1
 
-serie_valor_ciudad["Quito"] = serie_valor_ciudad["Quito"] - 50
+serie_valor_ciudad["Quito"] = serie_valor_ciudad
+["Quito"] - 50
 
 
 
