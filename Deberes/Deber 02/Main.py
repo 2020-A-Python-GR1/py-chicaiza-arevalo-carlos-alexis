@@ -1,9 +1,3 @@
-'''
-this is  a slide puzzle game . 
-the square marked 'xx' is the empty space
-the board is randomly filled so whenever you start the game you
-will get a fresh board .
-'''
 import string
 import random
 piece=()
