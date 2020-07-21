@@ -65,15 +65,89 @@ s5 = serie_valor_ciudad[ciudades_menor_5k]
 
 serie_valor_ciudad = serie_valor_ciudad * 1.1
 
-serie_valor_ciudad["Quito"] = serie_valor_ciudad
-["Quito"] - 50
+serie_valor_ciudad["Quito"] = serie_valor_ciudad["Quito"] - 50
 
 
 
+svc_cuadrado = np.square(serie_valor_ciudad)
 
+ciudades_uno = pd.Series({
+        "Montañita": 300,
+        "Guayaquill":10000,
+        "Quito": 2000        
+        })
 
+ciudades_dos = pd.Series({
+        "Loja": 300,
+        "Guayaquill":10000,
+        })
 
+ciudades_uno["Loja"] = 0;
 
+print(ciudades_uno+ciudades_dos)
 
+ciudades_add = ciudades_uno+ciudades_dos
+#otras operaciones con Series
+#sub()
+#mul()
+#div()
 
+ciudades_concat = pd.concat([ciudades_uno,ciudades_dos])
 
+ciudades_concat_verify = pd.concat([
+        ciudades_uno,
+        ciudades_dos],
+    verify_integrity = False)
+
+#append = concat
+ciudades_apend_verify = ciudades_uno.append([
+        ciudades_dos],
+    verify_integrity = False)
+
+print(ciudades_uno.max())
+print(pd.Series.max(ciudades_uno))
+print(np.max(ciudades_uno))
+
+print(ciudades_uno.min())
+print(pd.Series.min(ciudades_uno))
+print(np.min(ciudades_uno))
+
+print(ciudades_uno.mean())
+print(ciudades_uno.median())
+print(np.average(ciudades_uno))
+
+print(ciudades_uno.head(2))
+print(ciudades_uno.tail(2))
+
+print(ciudades_uno.sort_values(ascending
+= False).head(2))
+
+#0-1000 5% ex
+#1001 -5000 10% ex
+#5001 -20000 15% ex
+
+def calcular(valor_serie):
+    if(valor_serie<=1000):
+        return valor_serie * 1.05
+    if(valor_serie > 1000 and valor_serie <=5000):
+        return valor_serie * 1.10
+    if(valor_serie > 5000):
+        return valor_serie * 1.15
+
+ciudad_calculada = ciudades_uno.map(calcular)
+
+#if else = where
+#Cuando no cumple la condicion, se aplica
+
+resultado = ciudades_uno.where(ciudades_uno < 1000,
+                   ciudades_uno*1.05)
+
+serie_numeros = pd.Series(['1.0', '2', -3])
+
+#Integer, signed, unsigned, float
+print(pd.to_numeric(serie_numeros, downcast = 'integer'))
+
+serie_numeros_err = pd.Series(['no hay','1.0','2',-3])
+
+#ignore, coerce, raise (default)
+print(pd.to_numeric(serie_numeros_err, errors='coerce'))
