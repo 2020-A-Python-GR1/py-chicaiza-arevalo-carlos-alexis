@@ -102,7 +102,7 @@ while True:
     lista_cambiada = tranformarMatrixList(lista_escogida_numero, matrix)
     graficarMatrix(lista_escogida_numero, bloques, num_pieza_sacada, lista_cambiada)
     
-    num = input('\nplease type the number of the piece to move : ( q ) to quit  ')
+    num = input('\nIngresar pieza a mover : ( q ) para salir ')
     if num in ['q','Q']:
         break
     num = int(num)
@@ -112,7 +112,7 @@ while True:
                 pieza = (i,j)
                 print(pieza)
     if num > 15:
-        print('illegal move  ')
+        print('Movimiento inválido')
     else:
         if(pieza_sacada==(pieza[0]-1,pieza[1]))\
            or(pieza_sacada==(pieza[0]+1,pieza[1]))\
