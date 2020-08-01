@@ -98,3 +98,18 @@ numero_a_final = df16.sum(axis = 0)
 
 #17
 
+
+#18
+ser = pd.Series(np.random.randint(1, 10, 35))
+#shape(7,5)
+ser_18 = ser.values.reshape(7,5)
+
+#19
+ser = pd.Series(list('abcdefghijklmnopqrstuvwxyz'))
+pos = [0, 4, 8, 14, 20]
+# a e i o u
+print(ser[pos])
+
+#20
+ser1 = pd.Series(range(5))
+ser2 = pd.Series(list('abcde'))
