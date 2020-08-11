@@ -25,7 +25,6 @@ df2 = pd.read_csv(
 
 df3 = pd.read_csv(
         path,
-        nrows = 10,
         usecols = columnas,
         index_col='id'
         )
@@ -35,3 +34,4 @@ path_guardado = "./data/artwork_data.pickle"
 
 df3.to_pickle(path_guardado)
 df4 = pd.read_pickle(path_guardado)
+
