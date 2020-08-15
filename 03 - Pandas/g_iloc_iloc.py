@@ -40,3 +40,4 @@ tercero = df.iloc[0]
 tercero = df.iloc[[0,1]]
 tercero = df.iloc[0:10]
 tercero = df.iloc[df.index == 1035]
+
