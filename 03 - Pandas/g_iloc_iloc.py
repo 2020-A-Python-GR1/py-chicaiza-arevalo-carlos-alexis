@@ -18,8 +18,8 @@ print(filtrado_horizontal.index)
  
 #f. vertical
 serie_vertical = df['artist']
-print(serie_vertical)
-print(serie_vertical.index)
+#print(serie_vertical)
+#print(serie_vertical.index)
 
 #filtado por indice
 df_1035 = df[df.index == 1035]
@@ -40,4 +40,42 @@ tercero = df.iloc[0]
 tercero = df.iloc[[0,1]]
 tercero = df.iloc[0:10]
 tercero = df.iloc[df.index == 1035]
+
+tercero = df.iloc[0:10, 0:4]
+
+#############
+
+datos = {
+        "nota 1":{
+                "pepito": 7,
+                "juanita": 8,
+                "maria":9
+                },
+        "nota 2":{
+                "pepito": 7,
+                "juanita": 8,
+                "maria":9
+                },
+        "disciplina":{
+                "pepito": 4,
+                "juanita": 9,
+                "maria":2
+                },
+        }
+
+notas = pd.DataFrame(datos)
+
+condicion_nota = notas["nota 1"] <= 7
+condicion_nota2 = notas["nota 2"] <= 7
+condicion_disc = notas["disciplina"] <= 7
+
+mayores_siete = notas.loc[ condicion_disc,["nota 1"]]
+pasaron = notas.loc[condicion_nota][condicion_disc][condicion_nota2]
+
+notas.loc["maria", "disciplina"] = 7
+notas.loc[:,"discipina"] = 7
+
+#################Promedio de las 3 notas
+promedio = (notas["nota 1"]+notas["nota 2"]+notas["disciplina"])/3
+
 
