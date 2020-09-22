@@ -201,12 +201,9 @@ data = [[
 data_frame12 = pd.DataFrame(data)
 data_frame12 = data_frame12.transpose()
 
-cols = [0,1]
-data_frame12['01'] = data_frame12[cols].apply(lambda row: '-'.join(row.values.astype(str)), axis=1)
-cols = [2,3]
-data_frame12['23'] = data_frame12[cols].apply(lambda row: '-'.join(row.values.astype(str)), axis=1)
-cols = [4,5]
-data_frame12['45'] = data_frame12[cols].apply(lambda row: '-'.join(row.values.astype(str)), axis=1)
+data_frame12['01'] = data_frame12[[0, 1]].agg('-'.join, axis=1)
+data_frame12['23'] = data_frame12[[2, 3]].agg('-'.join, axis=1)
+data_frame12['45'] = data_frame12[[4, 5]].agg('-'.join, axis=1)
 
 #13
 arreglo = np.random.randint(0,10,size=(10,6))
