@@ -209,3 +209,25 @@ cols = [4,5]
 data_frame12['45'] = data_frame12[cols].apply(lambda row: '-'.join(row.values.astype(str)), axis=1)
 
 #13
+arreglo = np.random.randint(0,10,size=(10,6))
+data_frame13 = pd.DataFrame(arreglo)
+columna0= (data_frame13[0].value_counts())
+columna1= (data_frame13[1].value_counts())
+columna2= (data_frame13[2].value_counts())
+columna3= (data_frame13[3].value_counts())
+columna4= (data_frame13[4].value_counts())
+columna5= (data_frame13[5].value_counts())
+
+#14
+arreglo = np.random.randint(0,10,size=(10,3))
+data_frame14 = pd.DataFrame(
+        arreglo,
+        columns = [
+            'A',
+            'B',
+            'C'
+                ],
+        )
+
+data_frame14['D'] = data_frame14['A']*data_frame14['B']
+data_frame14['D'] = data_frame14['D']/data_frame14['C']
